@@ -3,10 +3,10 @@ import java.util.HashMap;
 
 public class Game {
 
-    HashMap<Player, String> registratedPlayers = new HashMap<>();
+    HashMap<String, Player> registratedPlayers = new HashMap<>();
 
     public void register(Player player) {
-        registratedPlayers.put(player, player.getName());
+        registratedPlayers.put(player.getName(), player);
     }
 
     public int round(String playerName1, String playerName2) {
@@ -25,11 +25,6 @@ public class Game {
     }
 
     public Player findByName(String playerName) {
-        for (Player key : registratedPlayers.keySet()) {
-            if (key.getName().equals(playerName)) {
-                return key;
-            }
-        }
-        return null;
+        return registratedPlayers.get(playerName);
     }
 }
