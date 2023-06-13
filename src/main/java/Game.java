@@ -22,9 +22,6 @@ public class Game {
         if (playerOne == null || playerTwo == null) {
             throw new NotRegisteredException("Кто-то из пользователей не зарегистрирован :) Для турнира нужна регистрация");
         }
-        if (playerOne.getStrength() == playerTwo.getStrength()) {
-            return 0;
-        }
         if (playerOne.getStrength() > playerTwo.getStrength()) {
             return 1;
         }
